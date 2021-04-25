@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<link rel="stylesheet" type="text/css" th:href="@{/css/loginCss.css}" />
+<title>Login</title>
+</head>
+<body>
+	<div class="banner">
+		<div class="navbar">
+			<img src="css/drive.jfif" class="logo">
+			<ul>
+				<li><a href="#">home</a></li>
+				<li><a href="#">About</a></li>
+				<li><a href="#">Register</a></li>
+			</ul>
+		</div>
+		<div class="login-box">
+			<h1>Login</h1>
+			<form th:action="@{/logins}" th:object="${user}" method="post">
+					<div class="textbox">
+
+					<i class="fas fa-user"></i> <input type="text"
+						placeholder="Username" th:field="*{name}">
+				</div>
+
+				<div class="textbox">
+					<i class="fas fa-lock"></i> <input type="password"
+						placeholder="Password" th:field="*{pass}">
+				</div>
+				<input type="submit" class="btn" value="Sign in">
+			</form>
+		</div>
+
+	</div>
+</body>
+</html>

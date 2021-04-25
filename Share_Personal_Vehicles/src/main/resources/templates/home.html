@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<link rel="stylesheet" type="text/css" th:href="@{/css/mystyle.css}" />
+<title>Share Personal Vehicles</title>
+</head>
+<body>
+	<div class="banner">
+		<div class="navbar">
+			<img src="css/drive.jfif" class="logo">
+			<ul>
+				<li><a href="#">home</a></li>
+				<li><a href="#">About</a></li>
+				<li><a href="#">Sign Up</a></li>
+				<li><i class="fas fa-user" style="color:green;"></i><a href="/login" th:if="${user.name} == null">login </a>
+				<a href="/login" th:if="${user.name} != null" th:text="${user.name}"></a>
+				</li>
+			</ul>
+		</div>
+		<div class="content">
+			<h1>Save Money and Drive</h1>
+			<p>
+				Share you car with another and save money or reduce pollution and
+				traffic <br>jam to reach your destination.
+			</p>
+			<form>
+			<button type="submit" formaction="/takeride">
+				<span></span>Take Ride
+			</button>
+			<button type="submit" formaction="/giveride">
+				<span></span> Give Ride
+			</button>
+			</form>
+		</div>
+	</div>
+</body>
+</html>
